@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+    <head>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    </head>
+    <body>
+        {% if session['logged_in'] %}
+        <p>You're logged in already!</p>
+        {% else %}
+
+        <div style="text-align: center">
+            <div style="padding: 10px;">
+                <h2>Login here!</h2>
+            </div>
+            <div>
+                <form action="/login" method="POST">
+                <table style="display: inline-table">
+                    <tr>
+                        <td><input class="form-control" type="username" name="username" placeholder="Username" style="margin: 5px;"></td>
+                    </tr>
+                    <tr>
+                        <td><input class="form-control" type="password" name="password" placeholder="Password" style="margin: 5px;"></td>
+                    </tr>
+                </table>
+                    <br>
+                    <h5>{{mess}}</h5>
+
+                <input type="submit" class="btn btn-primary" value="Log in" style="margin: 5px;">
+
+            </form>
+            </div>
+            <div>
+            <br>
+            </div>
+            <div>
+                <form action="/register" >
+        {#            <input type="submit" value="Go to Google" />#}
+                    <button type="submit" class="btn btn-success btn-sm" style="padding: 5px 62px;">Register</button>
+            </form>
+            </div>
+
+
+
+
+
+        {% endif %}
+        </div>
+    </body>
